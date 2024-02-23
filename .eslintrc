@@ -1,0 +1,64 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "globals": {
+    "$": true,
+    "Promise": true
+  },
+  "parser": "@babel/eslint-parser",
+  "plugins": [
+    "react",
+    "no-unsanitized"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:compat/recommended",
+    "plugin:react/recommended",
+    "plugin:no-unsanitized/DOM"
+  ],
+  "rules": {
+    "no-var": 2,
+    "indent": ["error", 2],
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "only-multiline"],
+    "no-alert": "error",
+    "no-console": "error",
+    "no-unused-vars": ["error", {
+      "args": "none"
+    }],
+    "no-use-before-define": "off",
+    "eol-last": "off",
+    "react/prefer-stateless-function": "off",
+    "react/sort-comp": ["error", {
+      order: [
+        'static-methods',
+        'mixins',
+        'lifecycle',
+        'everything-else',
+        '/^on.+$/',
+        'rendering'
+      ],
+      groups: {
+        rendering: [
+          'render',
+          '/^render.+$/'
+        ]
+      }
+    }]
+  },
+  "settings": {
+    "polyfills": [
+      "Object",
+      "Array",
+      "Promise",
+      "Map",
+      "Set",
+      "fetch",
+    ],
+    "react": {
+      "version": "detect"
+    }
+  }
+}
